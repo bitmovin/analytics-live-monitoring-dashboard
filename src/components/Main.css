@@ -1,0 +1,36 @@
+.Main {
+  margin: 1rem auto;
+  max-width: 120rem;
+}
+
+.Main-titleRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Main-titleRow h1 {
+  font-weight: 300;
+  font-size: 3.6rem;
+  margin: 0;
+  color: #666;
+}
+
+.Main .panel {
+  margin-top: 1rem;
+  padding: 2.5rem 3rem;
+}
+
+.Main-selects {
+  display: flex;
+  margin-top: 0.96rem;
+}
+
+.Main-selects .form-group {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.Main-selects label {
+  margin: 0 1rem;
+}

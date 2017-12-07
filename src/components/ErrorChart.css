@@ -1,0 +1,12 @@
+.Chart .deselectedColumn {
+  opacity: 0.5;
+}
+
+.Chart .highcharts-point {
+  stroke-width: 0.8px;
+}
+
+.Chart .selectedSeries .highcharts-point {
+  fill: #666;
+  opacity: 1;
+}

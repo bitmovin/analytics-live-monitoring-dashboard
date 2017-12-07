@@ -1,0 +1,17 @@
+div.LicenseKeySelect {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.LicenseKeySelect select.form-control {
+  display: inline-block;
+  width: auto;
+}
+
+.LicenseKeySelect label {
+  margin: 0 1rem 0 0;
+  font-weight: normal;
+}

@@ -1,0 +1,22 @@
+.Chart {
+  margin: 8rem 0;
+  transition: opacity 0.2s ease;
+  display: flex;
+}
+
+.Chart h2 {
+  width: 18%;
+  margin-top: 0;
+  font-size: 3.2rem;
+  font-weight: 200;
+  color: #AAA;
+}
+
+.Chart .highchartsContainer {
+  width: 82%;
+}
+
+.Chart.loading {
+  opacity: 0.4;
+  pointer-events: none;
+}

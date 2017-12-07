@@ -1,0 +1,19 @@
+{
+  "name": "livestream-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bitmovin-javascript": "^1.5.0",
+    "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.1.1",
+    "react-highcharts": "^15.0.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
