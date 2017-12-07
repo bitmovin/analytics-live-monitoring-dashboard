@@ -6,7 +6,7 @@ import { minutes } from '../calcDate';
 import './ErrorTable.css';
 
 const errorMapping = errors
-  .reduce((errorMap, { errorCode, errorMessage }) => ({ ...errorMap, [errorCode]: errorMessage }));
+  .reduce((obj, { errorCode, errorMessage }) => ({ ...obj, [errorCode]: errorMessage }), {});
 
 export default function ErrorTable({ selectedTimestamp, selectedSeriesName, onSelectSeriesName,
   onSelectTimestamp, data, from, to, loading }) {
