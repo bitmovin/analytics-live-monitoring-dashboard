@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import errors from '../errors.js';
+import LoadingIndicator from './LoadingIndicator.js';
 import { minutes } from '../calcDate';
 import './ErrorTable.css';
 
@@ -25,13 +26,8 @@ export default function ErrorTable({ selectedTimestamp, selectedSeriesName, onSe
     // After sorting, these duplicates are subsequent
     .filter((row, index, array) => index === 0 || array[index - 1][1] !== row[1]);
 
-  const wrapperClasses = ['ErrorTable'];
-  if (loading) {
-    wrapperClasses.push('loading');
-  }
-
   return (
-    <div className={wrapperClasses.join(' ')}>
+    <div className="ErrorTable">
       <h2>
         <button
           type="button"
@@ -49,28 +45,30 @@ export default function ErrorTable({ selectedTimestamp, selectedSeriesName, onSe
           ＞
         </button>
       </h2>
-      <Table striped condensed hover>
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th>Description</th>
-            <th>Occurrences</th>
-          </tr>
-        </thead>
-        <tbody>
-          {errorRows.map(([, errorCode, occurrences]) =>
-            <tr
-              key={errorCode}
-              className={`${errorCode}` === selectedSeriesName ? 'highlighted' : null}
-              onClick={() => onSelectSeriesName(`${errorCode}`)}
-            >
-              <td>{errorCode}</td>
-              <td>{errorMapping[errorCode]}</td>
-              <td>{occurrences}</td>
+      <LoadingIndicator loading={loading}>
+        <Table striped condensed hover>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Description</th>
+              <th>Occurrences</th>
             </tr>
-          )}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {errorRows.map(([, errorCode, occurrences]) =>
+              <tr
+                key={errorCode}
+                className={`${errorCode}` === selectedSeriesName ? 'highlighted' : null}
+                onClick={() => onSelectSeriesName(`${errorCode}`)}
+              >
+                <td>{errorCode}</td>
+                <td>{errorMapping[errorCode]}</td>
+                <td>{occurrences}</td>
+              </tr>
+            )}
+          </tbody>
+        </Table>
+      </LoadingIndicator>
     </div>
   )
 }

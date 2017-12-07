@@ -15,8 +15,3 @@
 .Chart .highchartsContainer {
   width: 82%;
 }
-
-.Chart.loading {
-  opacity: 0.4;
-  pointer-events: none;
-}

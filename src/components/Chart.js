@@ -1,6 +1,7 @@
 import React from 'react';
 import Highcharts from 'react-highcharts';
 import calcDate, { minutes } from '../calcDate.js';
+import LoadingIndicator from './LoadingIndicator.js';
 import './Chart.css';
 
 Highcharts.Highcharts.setOptions({ global: { useUTC: false } });
@@ -31,16 +32,13 @@ export default function Chart({ loading, config, title, from, to }) {
     ...config
   }
 
-  const wrapperClasses = ['Chart'];
-  if (loading) {
-    wrapperClasses.push('loading');
-  }
-
   return (
-    <div className={wrapperClasses.join(' ')}>
+    <div className="Chart">
       <h2>{title}</h2>
       <div className="highchartsContainer">
-        <Highcharts config={finalConfig} isPureConfig />
+        <LoadingIndicator loading={loading}>
+          <Highcharts config={finalConfig} isPureConfig />
+        </LoadingIndicator>
       </div>
     </div>
   );
