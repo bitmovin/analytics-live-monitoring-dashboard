@@ -2,6 +2,7 @@
   "name": "livestream-monitor",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://demo.bitmovin.com/public/analytics/live-monitor",
   "dependencies": {
     "bitmovin-javascript": "^1.5.0",
     "react": "^16.1.1",
