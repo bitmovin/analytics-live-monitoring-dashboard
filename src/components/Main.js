@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Bitmovin from 'bitmovin-javascript';
-import { Panel } from 'react-bootstrap';
+import { Panel, Checkbox } from 'react-bootstrap';
 import LicenseKeySelect from './LicenseKeySelect.js';
 import VideoSelect from './VideoSelect.js';
 import VideoStats from './VideoStats.js';
@@ -11,6 +11,7 @@ import ErrorTable from './ErrorTable.js';
 import PeriodSelect from './PeriodSelect.js';
 import calcDate, { minutes, seconds } from '../calcDate.js';
 import './Main.css';
+import Highcharts from 'react-highcharts';
 
 const currentTimeInterval = (period) => {
   const to = new Date();
@@ -67,6 +68,11 @@ export default class Main extends Component {
     this.setState({ currentVideoId: event.currentTarget.value });
 
   handlePeriodChange = (event) => this.setState({ currentPeriod: event.currentTarget.value });
+
+  handleUTCChange = (event) => {
+    Highcharts.Highcharts.setOptions({ global: { useUTC: event.currentTarget.checked } });
+    this.tickData();
+  }
 
   render() {
     const { licenses } = this.props;
@@ -133,6 +139,9 @@ export default class Main extends Component {
               <ErrorChart />
               <ErrorTable />
             </VideoStats>
+          </form>
+          <form>
+            <Checkbox onChange={this.handleUTCChange}> Format time as UTC</Checkbox>
           </form>
         </Panel>
       </div>
