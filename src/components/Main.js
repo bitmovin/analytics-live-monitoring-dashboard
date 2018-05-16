@@ -25,7 +25,7 @@ const defaultPeriod = 15 * minutes;
 
 export default class Main extends Component {
   state = {
-    queryBuilder: new Bitmovin({ apiKey: this.props.apiKey }).analytics.queries.builder,
+    queryBuilder: new Bitmovin({ apiKey: this.props.apiKey, tenantOrgId: this.props.tenantOrgId }).analytics.queries.builder,
     userCounts: [],
     errorCounts: [],
     currentVideoId: '',
