@@ -66,6 +66,8 @@ export default class Authenticated extends Component {
               placeholder="Bitmovin API key"
               name="apiKey"
             />
+            <ControlLabel>Tenant Org Id</ControlLabel>
+            <FormControl type="text" placeholder="Tenant Org Id" name="tenantOrgId" />
             <FormControl.Feedback />
             {error && <HelpBlock>{error}</HelpBlock>}
           </FormGroup>
