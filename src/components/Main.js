@@ -112,7 +112,8 @@ export default class Main extends Component {
               videoId={currentVideoId}
               from={from}
               to={to}
-              count="USER_ID"
+              count="IMPRESSION_ID"
+              queryExtension={(query) => query.filter('PLAYED', 'GT', 0)}
             >
               <UserChart />
             </VideoStats>
@@ -122,7 +123,7 @@ export default class Main extends Component {
               videoId={currentVideoId}
               from={from}
               to={to}
-              count="USER_ID"
+              count="IMPRESSION_ID"
               queryExtension={(query) => query.filter('BUFFERED', 'GT', 0)}
             >
               <BufferingChart />
